@@ -18,7 +18,7 @@ func solve(expr []string) string {
 
 	if expr[len(expr) - 1] == ")" {
 		i := len(expr) - 1
-		for j := i; j > -1; j -- {
+		for j := i - 1; j > -1; j -- {
 			if expr[j] == "(" {
 				var pre []string
 				if j != 0 {
@@ -175,8 +175,8 @@ func solve(expr []string) string {
 				}
 
 				if len(expr) > 3 && expr[len(expr) - 3] == ")" {
-					j := len(expr) - 4
-					for i := j; i > -1; i -- {
+					j := len(expr) - 3
+					for i := j - 1; i > -1; i -- {
 						if expr[i] == "(" {
 							var pre []string
 							if j != 0 {
