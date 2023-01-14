@@ -245,7 +245,8 @@ func main() {
 			discord *discordgo.Session,
 			event *discordgo.MessageCreate) {
 
-		if strings.Fields(event.Message.Content)[0] == "/roll" {
+		words := strings.Fields(event.Message.Content)
+		if len(words) > 0 && words[0] == "/roll" {
 
 			var expr []string
 			for i := 6; i < len(event.Message.Content); i++ {
