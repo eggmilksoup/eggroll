@@ -28,7 +28,7 @@ func solve(expr []string) string {
 				if i + 1 < len(expr) {
 					post = expr[i + 2:]
 				}
-				expr = append(pre, solve(expr[j:i+1]))
+				expr = append(pre, solve(expr[j+1:i]))
 				for _, str := range post {
 					expr = append(expr, str)
 				}
@@ -186,7 +186,7 @@ func solve(expr []string) string {
 							if i + 1 != len(expr) {
 								post = expr[i + 2:]
 							}
-							expr = append(pre, solve(expr[j:i+1]))
+							expr = append(pre, solve(expr[i+1:j]))
 							for _, str := range post {
 								expr = append(expr, str)
 							}
